@@ -1,5 +1,8 @@
 package com.company.Week4SinglyLinkedList.Tuto4;
 
+import com.company.GameCharacter;
+
+import java.util.Comparator;
 import java.util.Objects;
 
 public class MyLinkedListT<E> {
@@ -11,7 +14,52 @@ public class MyLinkedListT<E> {
         tail = null;
     }
 
-    public int getSize(){
+    /*code for world of titans ends here*/
+    public E getMiddle(E start, E last) {
+        if (start == null)
+            return null;
+
+        Node<E> temp = head;
+        for (int i = 0; i < size; i++) {
+            if (temp.elem.equals(start)) //finding start Node in list
+                break;
+            temp = temp.next;
+        }
+        //after loop -> temp == start
+        //temp == slow && fastNode == fast
+
+        Node<E> fastNode = temp.next;
+
+//        E slow = temp.elem;
+//        E fast = fastNode.elem;
+        if (fastNode == null)
+            return temp.elem;
+
+        while (last != fastNode.elem) {
+            fastNode = fastNode.next;
+            if (fastNode.elem != last) {
+                temp = temp.next;
+                fastNode = fastNode.next;
+            }
+            if (fastNode == null) break;
+        }
+        return temp.elem;
+    }
+
+    protected Node<E> getNode(E e) {
+
+        Node<E> temp = head;
+        while (temp != null) {
+            if (temp.elem.equals(e))
+                break;
+            temp = temp.next;
+        }//temp = e's node
+        return temp;
+    }
+
+/*code for world of titans ends here*/
+
+    public int getSize() {
         return size;
     }
 
@@ -178,13 +226,13 @@ public class MyLinkedListT<E> {
      *
      * @return boolean
     public boolean contains(E e) {
-        Node<E> pointer = head;
-        for (int i = 0; i < size - 1; i++) {
-            if (pointer.elem.equals(e))
-                return true;
-            pointer = pointer.next;
-        }
-        return false;
+    Node<E> pointer = head;
+    for (int i = 0; i < size - 1; i++) {
+    if (pointer.elem.equals(e))
+    return true;
+    pointer = pointer.next;
+    }
+    return false;
     }*/
 
     /*public String toString() {

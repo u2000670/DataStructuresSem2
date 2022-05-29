@@ -249,16 +249,16 @@ public class Graph<T extends Comparable<T>, N extends Comparable<N>> {
                 Edge<T, N> prevEdge = sourceVertex.firstEdge;
                 Edge<T, N> currentEdge = sourceVertex.firstEdge;
                 while (currentEdge != null) {
-                    prevEdge = currentEdge;
                     if (currentEdge.toVertex.vertexInfo.compareTo(destination) == 0) { //destination is found
                         prevEdge.nextEdge = currentEdge.nextEdge;
 
-                        currentEdge.nextEdge = null; //unnecessary?
+                        currentEdge.nextEdge = null; //unnecessary? as Java's Garbage Collector would already detect that there is no reference to the removed edge (line 253) ? ¯\_(ツ)_/¯
 
                         sourceVertex.outdeg--;
                         destVertex.indeg--;
                         return true;
                     }
+                    prevEdge = currentEdge;
                     currentEdge = currentEdge.nextEdge;
                 }
             }

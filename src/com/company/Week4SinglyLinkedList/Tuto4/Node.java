@@ -19,13 +19,13 @@ public class Node<E> {
         Node<String> tail = node2;
 
         head.next = tail;
-        MyLinkedListT<String> mll = new MyLinkedListT<>(new String[]{"a", "z"});
+        /*MyLinkedListT<String> mll = new MyLinkedListT<>(new String[]{"a", "z"});
 //        MyLinkedList<String> mll= new MyLinkedList<>();
         mll.addFirst("b");
         mll.addLast("y");
         mll.addFirst("firstNode");
-        System.out.println("Size of list: " + mll.getSize());
-        System.out.println(mll);
+        System.out.println("Size of list: " + mll.getSize());*/
+//        System.out.println(mll);
 //        mll.print();
 
 

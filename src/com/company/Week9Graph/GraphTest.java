@@ -25,7 +25,8 @@ public class GraphTest {
             graph.addVertex(letter);
         }
 
-        /* //adding vertices manually
+        //adding vertices manually
+        /*
         graph.addVertex('A');
         graph.addVertex('B');
         graph.addVertex('C');
